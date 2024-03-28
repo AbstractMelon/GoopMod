@@ -27,11 +27,13 @@ namespace Goop
             Logger.LogInfo($"Goop is now gooping all over the place!");
 
             Harmony harmony = new Harmony("com.melon.goop");
+
+
         }
 
         void Update()
         {
-
+        
         }
 
         public void Start()
@@ -99,8 +101,6 @@ namespace Goop
         [HarmonyPrefix]
         private static void Update_NoReadyUp_Plug(SteamManager __instance)
         {
-            Debug.Log("Ham and cheese");
-
             if (Goop.SendReadyUpReject)
             {
                 byte[] uiCommunicationBuffer = new byte[1];
@@ -113,4 +113,6 @@ namespace Goop
             }
         }
     }
+
+   
 }
