@@ -70,7 +70,7 @@ namespace Goop
         public bool goopenabled = false;
         public UnityEngine.Color textColor;
         public UnityEngine.Color buttonColor;
-        public string Credits = "By Melon";
+        public string Credits = "By Melon, Codemob, and Minidogg";
         public static bool AntiReadyUp;
         public static bool ForceReadyUp;
         public static bool AntiKick;
@@ -79,9 +79,9 @@ namespace Goop
 
         void GoopGUI(int windowID)
         {
-            if(GUI.Button(new Rect(60, 50, 170f, 30f), "No Ready Up: <>"))
+            if(GUI.Button(new Rect(60, 50, 170f, 30f), "No Ready Up: "+boolToOnOffTag(SendReadyUpReject)))
             {
-
+                SendReadyUpReject = !SendReadyUpReject;
             }
 
         }
@@ -99,6 +99,8 @@ namespace Goop
         [HarmonyPrefix]
         private static void Update_NoReadyUp_Plug(SteamManager __instance)
         {
+            Debug.Log("Ham and cheese");
+
             if (Goop.SendReadyUpReject)
             {
                 byte[] uiCommunicationBuffer = new byte[1];
