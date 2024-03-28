@@ -41,10 +41,7 @@ namespace Goop
 
         }
 
-        string boolToOnOffTag(bool boolean)
-        {
-            return boolean == true ? "<color=green>On</color>" : "<color=red>Off</color>";
-        }
+
 
         void OnGUI()
         {
